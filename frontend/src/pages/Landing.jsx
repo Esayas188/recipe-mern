@@ -22,7 +22,7 @@ const Landing = () => {
     <>
       <div className="w-screen min-h-screen font-[Poppins] text-[#011936] overflow-hidden bg-[#f2f3f7]">
       <div>
-         <nav className="flex flex-col pb-8 md:pb-0 pt-4 justify-center md:flex-row md:items-center  md:h-16 min-h-[80px] bg-[#011936] fixed top-0 text-[#DCF3F0] w-screen px-4">
+         <nav className="flex flex-col pb-8 md:pb-0 pt-4 justify-center md:flex-row md:items-center  md:h-16 min-h-[80px]    w-screen px-4">
      
             <div className="flex  md:pt-0 justify-between ml-2 ">
               <Link to={'/'}>
@@ -39,30 +39,30 @@ const Landing = () => {
          
           <div className={`file flex-1 justify-center items-center  md:inline   ${menuOpen ? 'hidden' : 'active'}`}>
             <ul className="flex flex-col md:pr-4 md:flex-row justify-center p-4 md:p-0 md:space-y-0  items-center md:justify-end space-y-6 md:space-x-6">
-              <li className="hover:text-[#9cb6b2] ">
+              <li className="text-[#011936] font-bold ">
                 <Link to={`/`}>
                   <span>Home</span>
                 </Link>
               </li>
-              <li className="hover:text-[#9cb6b2] ">
+              <li className="text-[#011936] font-bold">
                 <Link to={`/Home`}>
                   <span>Recipes</span>
                 </Link>
               </li>
  
               <li>
-                <a href="#" className="hover:text-[#9cb6b2]">
+                <a href="#" className="text-[#011936] font-bold">
                   Blog
                 </a>
                 
               </li>
               <li>
-                <a href="#" className="hover:text-[#9cb6b2]">
+                <a href="#" className="text-[#011936] font-bold">
                   About
                 </a>
                 
               </li>
-              <li>
+              <li className='text-[#011936] font-bold'>
                 <a href="#">
                   Contact
                 </a>
@@ -71,16 +71,16 @@ const Landing = () => {
               <li>
               {user && (
                 <div>
-                  <button className="py-2 px-3  bg-[#2c5b94] shadow-lg text-[#DCF3F0]  rounded-md cursor-pointer  hover:bg-[#1b3452] " onClick={handleClick}>Log out</button>
+                  <button className="py-2 px-3  bg-[#011936] shadow-lg text-[#DCF3F0]  rounded-md cursor-pointer  hover:bg-[#1b3452] " onClick={handleClick}>Log out</button>
                 </div>
               )}
               {!user && (
                 <>
                   <Link to={`/login`}>
-                    <a className="py-2 px-3  bg-[#2c5b94] shadow-lg text-[#DCF3F0] rounded-md cursor-pointer  hover:bg-[#1b3452] mr-2" >Login</a>
+                    <a className="py-2 px-3  bg-[#011936] shadow-lg text-[#DCF3F0] rounded-md cursor-pointer  hover:bg-[#1b3452] mr-2" >Login</a>
                   </Link>
                   <Link className='pb-6 sm:  md:' to={`/signup`}>
-                  <a className="py-2 px-3  bg-[#2c5b94] shadow-lg  text-[#DCF3F0] rounded-md cursor-pointer  hover:bg-[#1b3452] " >Signup</a>
+                  <a className="py-2 px-3  bg-[#011936] shadow-lg  text-[#DCF3F0] rounded-md cursor-pointer  hover:bg-[#1b3452] " >Signup</a>
 
                   </Link>
                 </>
@@ -99,15 +99,15 @@ const Landing = () => {
   
       </div>
 
-        <div className="text-[#011936] mt-20 bg-cover bg-center w-screen min-h-[500px]  grid sm:grid-cols-1 md:grid-cols-4  lg:grid-cols-5  px-16 md:pr-0 md:items-center pb-10">
-          <div className=" pt-10 md:pt-0  flex flex-col mt-2   col-span-2 ">
+        <div className="text-[#011936] bg-cover bg-center w-screen min-h-[500px]  grid sm:grid-cols-1 md:grid-cols-4  lg:grid-cols-5  px-16 md:pr-0 md:items-center pb-10">
+          <div className=" pt-20 md:pt-0  flex flex-col mt-2   col-span-2 ">
 
             <p className="  px-8 md:px-0  md:text-left text-[#011936] text-4xl sm:text-5xl font-extrabold sm:leading-[56px] ">Master your cooking skill like a <p className='text-[#336bb1]'>chef.</p> </p>
               
             <p className=" text-left px-8 md:px-0 md:text-left text-[#011936] font-medium pb-6 "> Come explore our website and find the perfect recipe for your next meal.</p>
 
             <Link className='px-8 md:px-0' to={`/Home`}>
-                <button className=' uppercase tracking-[-1] py-3 px-8 bg-[#011936] border-white border rounded-md shadow-sm hover:bg-[#021e3f] text-white '>start here</button>
+                <button className=' uppercase tracking-[-1] py-3 px-8 bg-[#011936] border-white border rounded-md shadow-sm hover:bg-[rgba(2,30,63,0.9)] text-white '>start here</button>
 
             </Link>
 
