@@ -81,10 +81,14 @@ const MealsDetailList = ({id,mealname}) => {
         ) : (mealsdetail && mealsdetail.length > 0 && (
           <>
           <div className='sm:col-span-2 flex  '>
-            <div className='flex flex-col rounded-xl overflow-hidden border'>
-              <img  className=' h-full w-full object-cover ' src={mealsdetail[0].strMealThumb} alt="image" />
+            <div className='flex flex-col gap-2 overflow-hidden '>
+              <div className=' overflow-hidden'>
+              <img  className='rounded-md h-56 sm:h-72 w-full object-cover ' src={mealsdetail[0].strMealThumb} alt="image" />
+
+
+              </div>
           
-              <div className=' border-t pt-2 p-4' >
+              <div className='  pt-2 p-4 border rounded-md' >
                 <p className=" font-medium pl-4 pt-2  ">Ingredients:</p>
                 <ul className='flex flex-wrap'>
                   {

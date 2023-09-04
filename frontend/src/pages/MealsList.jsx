@@ -13,7 +13,7 @@ const MealsList = ({pageNumber,id,categoryname}) => {
   const [_id, set_id] = useState(id);
   const [strcategoryname, setcategoryname] = useState(categoryname);
 
-
+  const [searchQuery, setSearchQuery] = useState("");
   const [meals, setmeals] = useState(null)
 
 
@@ -21,7 +21,7 @@ const MealsList = ({pageNumber,id,categoryname}) => {
       const fetchmeals=async()=>{
         setLoading(true);
         try {
-          const response = await fetch(`http://localhost:4000/meals/${_id}?page=${page}`)
+          const response = await fetch(`http://localhost:4000/meals/${_id}?page=${page}&search=${searchQuery}`)
           const json = await response.json()  
           console.log('this is json.pages',json.pages)      
           setmeals(json.data)
@@ -40,16 +40,28 @@ const MealsList = ({pageNumber,id,categoryname}) => {
   
       fetchmeals()
   
-    },[page])
+    },[page,searchQuery])
+    const handleSearch = () => {
+      setPage(1); // Reset page number when performing a new search
+    };
 
     return ( 
 
-      <div className="px-16 py-6 ">
+      <div className="px-16 py-6  ">
         <div >
 
-          <div className="flex justify-center pt-2">
-            <input type="text" className="flex-1 py-1 border-gray-400 text-sm  border pl-6 bg-white  max-w-lg  rounded-l-full"/>
-            <a  className="bg-white rounded-r-full px-3 bg-gray border-2 hover:bg-gray-300 transition duration-500" href=""><span>icon</span></a> 
+          <div className="search flex justify-center items-center ">
+            
+            <input type="text" value={searchQuery}   onChange={(e) => {
+              setSearchQuery(e.target.value);
+              handleSearch(); 
+            }} 
+            className="flex-1 px-6 py-4 h-7 text-sm text-slate-600 border-gray-400 border bg-white max-w-lg rounded-l-full"/>
+              
+            <div onClick={handleSearch} className='flex justify-center ml-2   border hover:cursor-pointer py-4 px-3 hover:bg-[rgba(1,25,54,0.8)] bg-[#011936]  h-7 rounded-r-full items-center'>
+              <span class="material-symbols-outlined    text-[#DCF3F0]  " >search</span> 
+
+            </div>
           </div>
         </div>
         <div>
@@ -71,7 +83,7 @@ const MealsList = ({pageNumber,id,categoryname}) => {
           meals.map((meal) => (
             <div
               key={meal._id}
-              className="bg-gray-300 rounded overflow-hidden shadow-md relative"
+              className="bg-gray-300 rounded overflow-hidden shadow-md "
             >
 
               <Link to={`/mealsdetail/${meal.strMeal}/${meal._id}`}>
@@ -95,7 +107,7 @@ const MealsList = ({pageNumber,id,categoryname}) => {
 
           <div className="flex justify-center space-x-4 item center mt-8">
 
-      <button className="pagination__prev disabled:bg-blue-300 bg-gray-200 rounded px-3 py-2"onClick={() => {
+      <button className="pagination__prev disabled:bg-[#011936] bg-gray-200 disabled:text-[#DCF3F0] rounded px-3 py-2"onClick={() => {
 
       setPage((page) => page - 1);
       navigate(`/meals/${strcategoryname}/${_id}?${page - 1}`);
@@ -104,7 +116,7 @@ const MealsList = ({pageNumber,id,categoryname}) => {
   &#171;
 </button>
 <button
-  className="pagination__next disabled:bg-blue-300 bg-gray-200 rounded px-3 py-2"
+  className="pagination__next disabled:bg-[#011936] disabled:text-[#DCF3F0] bg-gray-200 rounded px-3 py-2"
   onClick={() => {
     setPage((page) => page + 1);
     navigate(`/meals/${strcategoryname}/${_id}?${page + 1}`);

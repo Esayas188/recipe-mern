@@ -13,32 +13,30 @@ import Signup from './authcomponent/Signup'
 
 import Landing from './pages/Landing';
 
-
 function App() {
   const { user } = useAuthContext()
+  console.log('hellow here is the state of user ',user)
 
   return (
     <BrowserRouter>
     
       <Routes>
-        <Route path='/' element={<Landing/>}/>
-
-        <Route path='home/:pageNumber' element={user ? <Home/> : <Navigate to="/login" />}/>
-        <Route path='home/'element={user ? <Home/> : <Navigate to="/login" />}/>
+        <Route  path="/" element={<Landing/>}/>
+        <Route  path="home/:pageNumber" element={user? <Home/> : <Login />}/>
+        <Route  path="home/" element={user? <Home/> : <Login />}/>
         
-        <Route exact path="meals/:categoryname/:id/:pageNumber"element={user ? <Meals/> : <Navigate to="/login" />}/>
-        <Route exact path='meals/:categoryname/:id' element={user ? <Meals/> : <Navigate to="/login" />}/>
+        <Route  path="meals/:categoryname/:id/:pageNumber"element={user ? <Meals/> : <Login />}/>
+        <Route  path='meals/:categoryname/:id' element={user ? <Meals/> : <Login />}/>
         
-        <Route path='mealsdetail/:mealname/:id' element={user ? <MealsDetail/> : <Navigate to="/login" />} />
+        <Route path='mealsdetail/:mealname/:id' element={user ? <MealsDetail/> : <Login />} />
         <Route 
-              path="/login" 
+              path="login" 
               element={!user ? <Login /> : <Navigate to="/" />} 
             />
             <Route 
-              path="/signup" 
+              path="signup" 
               element={!user ? <Signup /> : <Navigate to="/" />} 
             />
-
       </Routes>
 
     </BrowserRouter>

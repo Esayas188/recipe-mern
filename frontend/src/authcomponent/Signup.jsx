@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { useSignup } from "../hook/useSignup"
 import { useNavigate,Link } from 'react-router-dom';
+import Navbar from "../pages/Navbar";
+import Footer from "../pages/Footer";
 
 const Signup = () => {
   const [email, setEmail] = useState('')
@@ -15,7 +17,8 @@ const Signup = () => {
 
   return (
     <>
-    <div className="min-h-screen min-w-screen bg-gray-50   flex  items-center">
+    <Navbar/>
+    <div className="mt-12 pt-16 md:mt-0 md:pt-40 min-h-screen min-w-screen bg-gray-50   flex  items-center">
       
       <div className=' flex  items-cente w-full mx-6 sm:mx-32  lg:mx-40 bg-white shadow-md border-gray-200 border overflow-hidden rounded-xl '>
         <div style={{ backgroundImage: "url('./img/second.svg')"}} className=" h-[480px] sm:flex-1 bg-center bg-cover bg-no-repeat"  >
@@ -39,7 +42,7 @@ const Signup = () => {
             value={password} 
           />
 
-          <button disabled={isLoading} className="bg-green-300 rounded-lg shadow-sm py-1 mt-1">Log in</button>
+          <button disabled={isLoading} className="bg-[#011936] hover:bg-[#12243a] cursor-pointer rounded-lg shadow-sm py-1 text-[#DCF3F0] mt-1">Sign Up</button>
           {error && <div className="error p-2 border rounded-md border-red-500 text-center">{error}</div>}
           <p className="pt-1">Have An Account <Link className=" text-blue-500" to={'/login'}>Login Here</Link> </p>
       </form>
@@ -53,6 +56,7 @@ const Signup = () => {
 
 
     </div>
+    <Footer/>
   
     </>
 

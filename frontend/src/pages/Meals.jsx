@@ -3,27 +3,39 @@ import { useParams } from 'react-router-dom';
 import '../index.css';
 import MealsList from './MealsList';
 import Navbar from './Navbar';
+import { useAuthContext } from '../hook/useAuthContext';
+import { useLogout } from '../hook/useLogout';
+import Footer from './Footer';
 
 const Meals = () => {
   const {pageNumber,id,categoryname} = useParams()
+  
+  const { user } = useAuthContext()
+  const { logout } = useLogout()
+  const handleClick=()=>{
+    logout()
+
+  };
   return (
-    
-    <div className="text-gray-600 ">
-      <div className="">
-        <Navbar/>
-        <main >
-          <div className="flex flex-row justify-end pr-10 md:pr-24 py-4 lg:pr-32 pl-16">
-            <a className="py-1 px-2 bg-blue-300 rounded-full  border-blue-300 border-2 hover:border-2 cursor-pointer hover:border-blue-300 hover:bg-white transition duration-500 uppercase mr-2" href="#">Log in</a>
-            <a className="py-1 px-2 bg-blue-300 rounded-full  border-blue-300 border-2 hover:border-2 cursor-pointer hover:border-blue-300 hover:bg-white transition duration-500 uppercase " href="#">Sign up</a>
+    <>
+      <Navbar/>
+      <div className="flex  flex-row justify-end  mt-12 pt-16  py-4 pr-20 pl-16">
+            {user && (
+              <div>
+                <span className='mx-2 hidden md:inline'>{user.email}</span>
+                <button className="py-2 px-3 bg-[#011936] hidden md:inline text-[#DCF3F0]  rounded-md cursor-pointer  hover:bg-[rgba(1,25,54,0.8)] mr-2" onClick={handleClick}>Log out</button>
+              </div>
+            )}
+
           </div>
-
+      <div className="text-[#011936] ">
         <MealsList pageNumber={pageNumber} id={id} categoryname={categoryname}/>
-
-      
-        </main>
       </div>
+      <Footer/>
 
-    </div>
+    </>
+    
+
     );
 }
  

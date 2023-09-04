@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import { useNavigate,Link } from 'react-router-dom';
 import { useAuthContext } from '../hook/useAuthContext'
 import { useLogout } from '../hook/useLogout'
+import Footer from './Footer';
 
 const Home = () => {
   const {pageNumber} = useParams()
@@ -16,38 +17,27 @@ const Home = () => {
   };
   return (
     
-    <div className="text-gray-600 ">
-      <div className="bg-gray-50">
+    <div className="text-[#011936] font-[Poppins] bg-slate-100 ">
+      <div className="">
         <Navbar/>
 
-        <main >
-          <div className="flex flex-row justify-end pr-10 md:pr-24 py-4 lg:pr-32 pl-16">
+
+          <div className="flex  flex-row justify-end  mt-12 pt-16  py-4 pr-20 pl-16">
             {user && (
               <div>
-                <span className='mx-2'>{user.email}</span>
-                <button className="py-1 px-2 bg-blue-300 rounded-full  border-blue-300 border-2 hover:border-2 cursor-pointer hover:border-blue-300 hover:bg-white transition duration-500 uppercase mr-2" onClick={handleClick}>Log out</button>
+                <span className='mx-2 hidden md:inline'>{user.email}</span>
+                <button className="py-2 px-3 bg-[#011936] hidden md:inline text-[#DCF3F0]  rounded-md cursor-pointer  hover:bg-[#0a2a52] mr-2" onClick={handleClick}>Log out</button>
               </div>
             )}
-            {!user && (
-              <>
-                <Link to={`/login`}>
-                  <a className="py-1 px-2 bg-blue-300 rounded-full  border-blue-300 border-2 hover:border-2 cursor-pointer hover:border-blue-300 hover:bg-white transition duration-500 uppercase mr-2" >Login</a>
-                </Link>
-                <Link to={`/signup`}>
-                <a className="py-1 px-2 bg-blue-300 rounded-full  border-blue-300 border-2 hover:border-2 cursor-pointer hover:border-blue-300 hover:bg-white transition duration-500 uppercase " >Signup</a>
 
-                </Link>
-              </>
-
-            )}
-
-            
           </div>
 
         <CategoryList pageNumber={pageNumber}/>
+        <Footer/>
+
 
       
-        </main>
+
       </div>
 
     </div>

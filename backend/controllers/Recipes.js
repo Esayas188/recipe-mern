@@ -34,14 +34,26 @@ const ListCategory = async (req, res) => {
   };
 const Meals = async(req,res)=>{
   const id = req.params.id
+  const searchQuery = req.query.search || '';
 
   try {
+    let query = { category: id };
+    
+    if (searchQuery) {
+      query = {
+        ...query,
+        $or: [
+          { strMeal: { $regex: searchQuery, $options: 'i' } },
+        ]
+      };
+    }
+
     const page = parseInt(req.query.page) || 1;
     const pageSize = parseInt(req.query.limit) || 6;
     const skip = (page - 1) * pageSize;
-    const total = await Meal.countDocuments({category:id});
+    const total = await Meal.countDocuments(query);
     const pages = Math.ceil(total / pageSize);
-    const meals = await Meal.find({category:id}).skip(skip).limit(pageSize);
+    const meals = await Meal.find(query).skip(skip).limit(pageSize);
     if (meals) {
       if(page > pages){
 
