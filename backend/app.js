@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
-
+const cors = require('cors')
 const Routes = require('./routes/Recipes')
 const userroutes = require('./routes/user')
 const app = express();
@@ -20,12 +20,19 @@ mongoose.connect(`${process.env.MONGO_URI}`, {
 )
 .catch( err => console.log('could not connect to database..'))
 // Enable CORS middleware
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+//   next();
+// });
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    methods: 'GET, POST, PUT, DELETE',
+    allowedHeaders: 'Content-Type',
+  })
+);
 
 // Rest of your API routes and logic
 // Middleware to parse JSON request bodies
