@@ -49,6 +49,12 @@ const Login = () => {
           {error && <div className="error p-2 border rounded-md border-red-500 text-center">{error}</div>}
           <p className='pt-1'>Don't Have An Account <Link className='text-blue-500' to={'/signup'}>Create Here</Link> </p>
 
+          <p className=' text-xs'>demo account</p>
+          <p className=' text-xs'>demo@gmail.com</p>
+          <p className=' text-xs'>DEMo@123</p>
+
+
+
       </form>
 
         </div>
