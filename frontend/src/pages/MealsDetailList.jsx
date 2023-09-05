@@ -11,6 +11,9 @@ const MealsDetailList = ({id,mealname}) => {
   const [_id, setid] = useState(id);
   const [mealsdetail, setmealsdetail] = useState(null)
   const [result, setresult] = useState(null)
+  const handleGoBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
   
 
 
@@ -19,7 +22,7 @@ const MealsDetailList = ({id,mealname}) => {
         setLoading(true);
         try {
           console.log('before fetching data')
-          const response = await fetch(`http://localhost:4000/meals/detail/${_id}`)
+          const response = await fetch(`https://recipe-one.onrender.com/meals/detail/${_id}`)
           const json = await response.json()  
           setmealsdetail(json.data)
           setLoading(false);
@@ -62,6 +65,9 @@ const MealsDetailList = ({id,mealname}) => {
     return ( 
 
       <div className="px-16 py-6  ">
+        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" onClick={handleGoBack}>
+          Back
+        </button>
 
         <div>
           {/* <p className="font-bold  mt-6  uppercase text-center">welcome to detail Recipe</p> */}

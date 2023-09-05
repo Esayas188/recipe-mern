@@ -17,7 +17,7 @@ const CategoryList = ({pageNumber}) => {
       const fetchcategories=async()=>{
         setLoading(true);
         try {
-          const response = await fetch(`http://localhost:4000/meals?page=${page}`)
+          const response = await fetch(`https://recipe-one.onrender.com/meals?page=${page}`)
           const json = await response.json()  
           console.log('this is json.pages',json.pages)      
           setcategories(json.data)

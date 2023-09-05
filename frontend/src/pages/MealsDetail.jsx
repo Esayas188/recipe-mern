@@ -1,5 +1,5 @@
+import { useParams,Link } from 'react-router-dom';
 
-import { useParams } from 'react-router-dom';
 import '../index.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -15,8 +15,10 @@ const MealsDetail = () => {
     logout()
 
   };
+
   const {id,mealname} = useParams() 
   return (
+    
     
     <div className="text-[#011936] font-[Poppins] mt-12  ">
       <div className="">
@@ -31,6 +33,8 @@ const MealsDetail = () => {
             )}
 
           </div>
+
+
 
 
         <MealsDetailList id={id} mealname={mealname}/>

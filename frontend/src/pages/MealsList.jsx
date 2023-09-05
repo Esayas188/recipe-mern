@@ -21,7 +21,7 @@ const MealsList = ({pageNumber,id,categoryname}) => {
       const fetchmeals=async()=>{
         setLoading(true);
         try {
-          const response = await fetch(`http://localhost:4000/meals/${_id}?page=${page}&search=${searchQuery}`)
+          const response = await fetch(`https://recipe-one.onrender.com/meals/${_id}?page=${page}&search=${searchQuery}`)
           const json = await response.json()  
           console.log('this is json.pages',json.pages)      
           setmeals(json.data)
