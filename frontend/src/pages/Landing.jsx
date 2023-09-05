@@ -39,30 +39,30 @@ const Landing = () => {
          
           <div className={`file flex-1 justify-center items-center  md:inline   ${menuOpen ? 'hidden' : 'active'}`}>
             <ul className="flex flex-col md:pr-4 md:flex-row justify-center p-4 md:p-0 md:space-y-0  items-center md:justify-end space-y-6 md:space-x-6">
-              <li className="text-[#011936] font-bold ">
+              <li className="text-[#011936] font-bold hover:text-[rgba(1,25,54,0.7)]">
                 <Link to={`/`}>
                   <span>Home</span>
                 </Link>
               </li>
-              <li className="text-[#011936] font-bold">
+              <li className="text-[#011936] hover:text-[rgba(1,25,54,0.7)] font-bold">
                 <Link to={`/Home`}>
                   <span>Recipes</span>
                 </Link>
               </li>
  
               <li>
-                <a href="#" className="text-[#011936] font-bold">
+                <a href="#" className="text-[#011936] hover:text-[rgba(1,25,54,0.7)] font-bold">
                   Blog
                 </a>
                 
               </li>
               <li>
-                <a href="#" className="text-[#011936] font-bold">
+                <a href="#" className="text-[#011936] hover:text-[rgba(1,25,54,0.7)] font-bold">
                   About
                 </a>
                 
               </li>
-              <li className='text-[#011936] font-bold'>
+              <li className='text-[#011936] hover:text-[rgba(1,25,54,0.7)] font-bold'>
                 <a href="#">
                   Contact
                 </a>
@@ -151,37 +151,8 @@ const Landing = () => {
           </form>
 
         </div>
-        <div className='w-full min-h-[300px] pt-6 mt-[150px] bg-[rgba(1,25,54,0.8)] text-white  pb-5'>
-          <div className='grid w-full min-h-72 gap-4 sm:grid-cols-3 items-center px-14'>
-            <div className='h-3/4'>
-              <p className='text-center font-bold'>About</p>
-            </div>
-            <div className='h-3/4 '>
-              <p className='text-center font-bold'>Support</p>
-              <div className='flex flex-col items-center justify-center p-2 space-y-4'>
-                <p className=' hover:cursor-pointer'>Contact Us</p>
-              </div>
+        <Footer/>
 
-            </div>
-            <div className='h-3/4 '>
-              <p className='text-center font-bold'>Social</p>
-              <div className='flex flex-col items-center justify-center p-2 space-y-4'>
-                <p className=' hover:cursor-pointer'>Facebook</p>
-                <p className=' hover:cursor-pointer'>Twitter</p>
-                <p className=' hover:cursor-pointer'>Instagram</p>
-                <p className=' hover:cursor-pointer'>Youtube</p>
-                <p className=' hover:cursor-pointer'>Linkedin</p>
-              </div>
-
-
-            </div>
-
-          </div>
-          <p className='text-center pt-8'>Copyright © 2023 Delicious Food. All rights reserved.</p>
-
-
-
-        </div>
       </div>
       </div>
     </>

@@ -62,7 +62,7 @@ const Navbar = () => {
                 
               </li>
               <li>
-                <a href="#" className="">
+                <a href="#" className="hover:text-[#9cb6b2]">
                   Contact
                 </a>
                 
