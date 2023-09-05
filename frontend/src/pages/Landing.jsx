@@ -119,17 +119,17 @@ const Landing = () => {
         <section className="features  p-8 ">
           <h2 className="text-3xl text-center font-bold mb-8">Our Features</h2>
           <div className=" grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-4">
-            <div className="feature-card text-center p-4 bg-white rounded-lg shadow-lg">
+            <div className="feature-card text-center p-4 bg-white rounded-lg shadow-sm">
               <i className="fas fa-utensils text-4xl text-gray-800 mb-4"></i>
               <h3 className="text-lg font-bold mb-2">Easy to Use</h3>
               <p className="text-gray-600"> Our website is intuitive and straightforward, ensuring a seamless experience in finding your desired recipes.</p>
             </div>
-            <div className="feature-card text-center p-4 bg-white rounded-lg shadow-lg">
+            <div className="feature-card text-center p-4 bg-white rounded-lg shadow-sm">
               <i className="fas fa-hamburger text-4xl text-gray-800 mb-4"></i>
               <h3 className="text-lg font-bold mb-2">Delicious Recipes</h3>
               <p className="text-gray-600">Indulge in our diverse collection of mouthwatering dishes, carefully curated and tested for flavor and satisfaction.</p>
             </div>
-            <div className="feature-card text-center p-4 bg-white rounded-lg shadow-lg">
+            <div className="feature-card text-center p-4 bg-white rounded-lg shadow-sm">
               <i className="fas fa-leaf text-4xl text-gray-800 mb-4"></i>
               <p className="text-lg font-bold mb-2">Healthy Options</p>
               <p className="text-gray-600 ">Promoting a balanced lifestyle, we offer nutritious recipes with wholesome ingredients and mindful cooking techniques.</p>
@@ -138,7 +138,7 @@ const Landing = () => {
 
       </section>
 
-      <div className=' mt-[50px]  min-h-screen w-full'>
+      <div className=' mt-[50px]  min-h-screen w-full '>
         <div className=' p-14 flex justify-center  w-full  '>
           <form action="" className='flex flex-col justify-center items-center space-y-6  '>
           <p className='text-[#011936] text-3xl font-bold'>Contact us</p>
@@ -151,12 +151,37 @@ const Landing = () => {
           </form>
 
         </div>
-        <Footer/>
+        <div className='w-full min-h-[300px] pt-6 mt-[150px] bg-[rgba(1,25,54,0.8)] text-white  pb-5'>
+          <div className='grid w-full min-h-72 gap-4 sm:grid-cols-3 items-center px-14'>
+            <div className='h-3/4'>
+              <p className='text-center font-bold'>About</p>
+            </div>
+            <div className='h-3/4 '>
+              <p className='text-center font-bold'>Support</p>
+              <div className='flex flex-col items-center justify-center p-2 space-y-4'>
+                <p className=' hover:cursor-pointer'>Contact Us</p>
+              </div>
 
-        
+            </div>
+            <div className='h-3/4 '>
+              <p className='text-center font-bold'>Social</p>
+              <div className='flex flex-col items-center justify-center p-2 space-y-4'>
+                <p className=' hover:cursor-pointer'>Facebook</p>
+                <p className=' hover:cursor-pointer'>Twitter</p>
+                <p className=' hover:cursor-pointer'>Instagram</p>
+                <p className=' hover:cursor-pointer'>Youtube</p>
+                <p className=' hover:cursor-pointer'>Linkedin</p>
+              </div>
 
-      
 
+            </div>
+
+          </div>
+          <p className='text-center pt-8'>Copyright © 2023 Delicious Food. All rights reserved.</p>
+
+
+
+        </div>
       </div>
       </div>
     </>

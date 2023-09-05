@@ -1,6 +1,6 @@
  const Footer = () => {
     return ( 
-        <div className='w-full min-h-[300px] pt-6 mt-[150px] bg-slate-200 '>
+        <div className='w-full min-h-[300px] pt-6 mt-[150px] bg-slate-200  pb-5'>
           <div className='grid w-full min-h-72 gap-4 sm:grid-cols-3 items-center px-14'>
             <div className='h-3/4'>
               <p className='text-center font-bold'>About</p>
