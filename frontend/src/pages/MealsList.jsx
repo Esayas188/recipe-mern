@@ -102,6 +102,11 @@ const MealsList = ({pageNumber,id,categoryname}) => {
             </div>
           ))
         )}
+        {(!meals && !loading && <p>No meal to display</p> ) 
+             
+         }
+
+
 
           </div>
 
