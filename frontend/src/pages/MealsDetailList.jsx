@@ -95,7 +95,7 @@ const MealsDetailList = ({id,mealname}) => {
               </div>
           
               <div className='  pt-2 p-4 border rounded-md' >
-                <p className=" font-medium pl-4 pt-2  ">Ingredients:</p>
+                <p className=" font-bold pl-4 pt-2  ">Ingredients:</p>
                 <ul className='flex flex-wrap'>
                   {
                     
@@ -111,7 +111,7 @@ const MealsDetailList = ({id,mealname}) => {
                   }
                 </ul>
                 <div>
-                  <p className='font-medium pl-4 pt-2'>Area</p>
+                  <p className=' font-bold pl-4 pt-4 '>Area:</p>
                   <div className="flex">
                     <p className='p-2 m-2 rounded-xl  bg-gray-100'>{mealsdetail[0].strArea}</p>
                   </div>
