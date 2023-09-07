@@ -3,6 +3,7 @@ import '../index.css';
 import {Link } from 'react-router-dom';
 import { useAuthContext } from '../hook/useAuthContext'
 import { useLogout } from '../hook/useLogout'
+import Contact from './Contact';
 
 const Navbar = () => {
 
@@ -48,6 +49,14 @@ const Navbar = () => {
                   <span>Recipes</span>
                 </Link>
               </li>
+              <li>
+
+                <Link className=' md:px-0 hover:text-[#9cb6b2] ' to={`/Contact`}>
+                  <p className=' hover:cursor-pointer '>Contact Us</p>
+
+                </Link>
+
+              </li>
  
               <li>
                 <a href="#" className="hover:text-[#9cb6b2]">
@@ -61,12 +70,7 @@ const Navbar = () => {
                 </a>
                 
               </li>
-              <li>
-                <a href="#" className="hover:text-[#9cb6b2]">
-                  Contact
-                </a>
-                
-              </li>
+
               <li>
               {user && (
                 <div>

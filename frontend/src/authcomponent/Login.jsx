@@ -45,7 +45,7 @@ const Login = () => {
             value={password} 
           />
 
-          <button disabled={isLoading} className="bg-[#011936] hover:bg-[#12243a] cursor-pointer rounded-lg shadow-sm py-1 mt-1 text-[#DCF3F0] ">Log in</button>
+          <button disabled={isLoading}  className="bg-[#011936] hover:bg-[#12243a] cursor-pointer rounded-lg shadow-sm py-1 mt-1 text-[#DCF3F0] ">{isLoading ? "Leading" : "Log in"}</button>
           {error && <div className="error p-2 border rounded-md border-red-500 text-center">{error}</div>}
           <p className='pt-1'>Don't Have An Account <Link className='text-blue-500' to={'/signup'}>Create Here</Link> </p>
 

@@ -4,6 +4,8 @@ import Navbar from './Navbar';
 import { useState } from 'react';
 import { useAuthContext } from '../hook/useAuthContext';
 import { useLogout } from '../hook/useLogout';
+import Contact from './Contact';
+
 
 const Landing = () => {
   const { user } = useAuthContext()
@@ -44,10 +46,18 @@ const Landing = () => {
                   <span>Home</span>
                 </Link>
               </li>
+
               <li className="text-[#011936] hover:text-[rgba(1,25,54,0.7)] font-bold">
                 <Link to={`/Home`}>
                   <span>Recipes</span>
                 </Link>
+              </li>
+              <li className='text-[#011936] hover:text-[rgba(1,25,54,0.7)] font-bold'>
+                <Link className='  ' to={`/Contact`}>
+                    <p className=' hover:cursor-pointer '>Contact Us</p>
+
+                </Link>
+                
               </li>
  
               <li>
@@ -56,18 +66,14 @@ const Landing = () => {
                 </a>
                 
               </li>
+
               <li>
                 <a href="#" className="text-[#011936] hover:text-[rgba(1,25,54,0.7)] font-bold">
                   About
                 </a>
                 
               </li>
-              <li className='text-[#011936] hover:text-[rgba(1,25,54,0.7)] font-bold'>
-                <a href="#">
-                  Contact
-                </a>
-                
-              </li>
+
               <li>
               {user && (
                 <div>
@@ -116,44 +122,71 @@ const Landing = () => {
           <img className='w-full' src="/img/chef.png" alt="Image" />
           </div>
         </div>
-        <section className="features  p-8 ">
-          <h2 className="text-3xl text-center font-bold mb-8">Our Features</h2>
-          <div className=" grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-4">
-            <div className="feature-card text-center p-4 bg-white rounded-lg shadow-sm">
-              <i className="fas fa-utensils text-4xl text-gray-800 mb-4"></i>
-              <h3 className="text-lg font-bold mb-2">Easy to Use</h3>
-              <p className="text-gray-600"> Our website is intuitive and straightforward, ensuring a seamless experience in finding your desired recipes.</p>
-            </div>
-            <div className="feature-card text-center p-4 bg-white rounded-lg shadow-sm">
-              <i className="fas fa-hamburger text-4xl text-gray-800 mb-4"></i>
-              <h3 className="text-lg font-bold mb-2">Delicious Recipes</h3>
-              <p className="text-gray-600">Indulge in our diverse collection of mouthwatering dishes, carefully curated and tested for flavor and satisfaction.</p>
-            </div>
-            <div className="feature-card text-center p-4 bg-white rounded-lg shadow-sm">
-              <i className="fas fa-leaf text-4xl text-gray-800 mb-4"></i>
-              <p className="text-lg font-bold mb-2">Healthy Options</p>
-              <p className="text-gray-600 ">Promoting a balanced lifestyle, we offer nutritious recipes with wholesome ingredients and mindful cooking techniques.</p>
-            </div>
-          </div>
-
+        <section className="features   ">
+          <h2 className="text-3xl text-center font-bold mt-8 mb-4">Our Features</h2>
+          
       </section>
 
-      <div className=' mt-[50px]  min-h-screen w-full '>
-        <div className=' p-14 flex justify-center  w-full  '>
-          <form action="" className='flex flex-col justify-center items-center space-y-6  '>
-          <p className='text-[#011936] text-3xl font-bold'>Contact us</p>
-          <div className='m-2 text-sm w-full' ><input className='px-4 py-2 w-full rounded-md ' type="text" placeholder='Enter Your Name' /></div>
-          <div className='m-2 text-sm w-full' ><input className='py-2 px-4 w-full rounded-md' type="text" placeholder='Enter Your Email' /></div>
-          <textarea   rows="6" placeholder='Your Message' className='py-2 px-4 w-full rounded-md resize-none'></textarea>
-          <button className='hover:bg-[#042855] rounded-xl text-white bg-[#011936] px-4 py-2 m-2 w-full '> submit</button>
+
+        <div className='  flex flex-col md:gap-16 sm:flex-row px-8 justify-center items-center  h-1/5'>
+          <div className='sm:ml-10   sm:px-8  sm:w-[500px] md:w-3/5 flex flex-col  px-20  '>
+              <p className="text-xl font-bold mb-2  ">Delicious Recipes</p>
+              <p className="text-gray-600 ">Indulge in our diverse collection of mouthwatering dishes, carefully curated and tested for flavor and satisfaction. So come on in and let us take you on a culinary journey!</p>
+
+          </div>
+          <div className=' flex justify-center items-center'>
+          <img className=' lg:w-5/6  w-full mt-16 sm:mb-0 rounded-2xl shadow-lg' src=" img/Screenshot (2).png " alt="image" />
 
 
-          </form>
+          </div>
 
         </div>
-        <Footer/>
 
-      </div>
+
+        <div className='mt-16 flex flex-col sm:flex-row px-8 justify-center items-center  h-1/5'>
+          <div className='flex justify-center items-center'>
+          <img className=' min-w-[200px] w-3/4 md:w-3/5 sm:w-full mb-16 sm:mb-0 rounded-2xl shadow-lg' src=" img/Screenshot (4).png " alt="image" />
+
+
+          </div>
+          <div className='sm:ml-10 min-w-[200px]  sm:px-8  sm:w-[500px] md:w-3/5 flex flex-col  px-20  '>
+              <p className="text-xl font-bold mb-2  ">Easy to Use</p>
+              <p className="text-gray-600 ">Our website is intuitive and straightforward, ensuring a seamless experience in finding your desired recipes.</p>
+
+          </div>
+        </div>
+
+
+
+
+
+        <div className=' mt-20 flex flex-col md:gap-16 sm:flex-row px-8 justify-center items-center  h-1/5'>
+          <div className='sm:ml-10   sm:px-8  sm:w-[500px] md:w-3/5 flex flex-col  px-20  '>
+              <p className="text-xl font-bold mb-2  ">Healthy Options</p>
+              <p className="text-gray-600 ">Promoting a balanced lifestyle, we offer nutritious recipes with wholesome ingredients and mindful cooking techniques.</p>
+
+          </div>
+          <div className=' flex justify-center items-center'>
+          <img className=' lg:w-5/6  w-full mt-16 sm:mb-0 rounded-2xl shadow-lg' src=" img/Screenshot (3).png " alt="image" />
+
+
+          </div>
+
+        </div>
+        <div className='mt-[150px] flex flex-col justify-center items-center '>
+          <div className='flex w-2/3 md:w-full justify-center items-center '>
+          <p className=' mb-[50px]  text-lg md:text-xl lg:text-2xl font-light '>Come explore our website and find the perfect recipe for your next meal.</p>
+
+
+          </div>
+          <Link className=' md:px-0  mb-8' to={`/Home`}>
+              <button className=' uppercase text-center tracking-[-1] py-3 px-24 font-bold   rounded-2xl  shadow-2xl bg-[rgba(1,25,54,1)]  hover:bg-[rgba(1,25,54,0.8)] text-white '>start here</button>
+
+          </Link>
+        </div>
+
+
+      <Footer/>
       </div>
     </>
   );

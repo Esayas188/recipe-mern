@@ -42,7 +42,7 @@ const Signup = () => {
             value={password} 
           />
 
-          <button disabled={isLoading} className="bg-[#011936] hover:bg-[#12243a] cursor-pointer rounded-lg shadow-sm py-1 text-[#DCF3F0] mt-1">Sign Up</button>
+          <button disabled={isLoading} className="bg-[#011936] hover:bg-[#12243a] cursor-pointer rounded-lg shadow-sm py-1 text-[#DCF3F0] mt-1">{isLoading ? "Leading" : "Sign Up"}</button>
           {error && <div className="error p-2 border rounded-md border-red-500 text-center">{error}</div>}
           <p className="pt-1">Have An Account <Link className=" text-blue-500" to={'/login'}>Login Here</Link> </p>
       </form>

@@ -12,6 +12,7 @@ import Login from './authcomponent/Login'
 import Signup from './authcomponent/Signup'
 
 import Landing from './pages/Landing';
+import Contact from './pages/Contact';
 
 function App() {
   const { user } = useAuthContext()
@@ -22,6 +23,7 @@ function App() {
     
       <Routes>
         <Route  path="/" element={<Landing/>}/>
+        <Route  path="contact/" element={<Contact/>}/>
         <Route  path="home/:pageNumber" element={user? <Home/> : <Login />}/>
         <Route  path="home/" element={user? <Home/> : <Login />}/>
         
